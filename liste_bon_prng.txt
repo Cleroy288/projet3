@@ -1,0 +1,72 @@
+########### liste bon prng #############
+
+1 ) une séquence de nombre génré suffisemment longue 
+2 ) vitesse / rapidité 
+3 ) une seed de bonne qualité 
+4 ) différent seed != différent nombres 
+5 ) pas de cycle 
+6 ) tout les chiffres ont la meme chance de apparaitre 
+
+
+############ consignes recue à l'oral ###############
+
+implémenter un QCM 
+	recevoir un fichier en entrée , fihcier texte 
+	il y aura sune info par ligne, chaque ligne sera une question ou une réponse
+	pour les questions un format précis un Q maj une barre verticale | puis énoncé de la question 
+	en suite toute les lignes en dessous de celle la c'est toute les réponses 
+	réponses A | (texte) | V (vrai) ou X (faux)
+	( il peut y avoir plus de 1 bonne réponse )
+	
+	autre format de réponses possible : A | (texte) | V ou X | (explication)
+
+	(la lecture du fichier .txt est donnée sur moodle, donc ça c'est déjà fait, il faudra peut etre changer 2 - 3 choses , le code données et commenté )
+
+	maintenant que on à récupéré les questions et les réponses, on doit afficher les question et réponses , 
+	important ! réponses doivent etre affiché dans un ordre aléatoire ! a, b, c -> b, c , a , etc .. les réponses doivent apparaitre dans un ordre aléatoire 
+	donc on vas devoir utiliser les PRNG , 
+
+	dans le reapport sur le projet PRNG , on doit expliquer ce que c'est que un PRNG , on doit convaincre qu'on à compris ce que c'est et convaincre que ça va bine afficher les choses dans un ordre aléatoire 
+
+	les réponses on les récpuère et on les stock après pour les évaluer 
+	3 mod de évaluation : sympa => si la personna à bon + 1, si la personne à mauvaise = 0 (pas de malus que monter ou 0 )
+						  méchante => si on à bon + 1 si mauvais -1 
+						  tendu => adapter le poids des mauvaise réponses pour que une réponses au hasard ne donne aucun points ... 
+						  	(si on à 100 question et que une perosnne rpéond au hasard la note doit etre proche de 0)
+	
+	2 mod de présentation des résultats :
+		1 ) évaluation : demander à l'utilisateur quel mode de quotation il veut , on affiche le score dans le mode que il veut 
+		2 ) la méthode comparative : afficher les 3 res (sympa, méchant , tendu )
+	
+	! interface = terminal avec input 
+
+	dates importantes à retenir :
+		cahier des charges et un planning 
+		1 ) cahier des charges 3 pages max avec un éditeur de texte et rendre en PDF 
+		2 ) planning le rendre en pdf avec un tableur genre excel 
+		les 2 doivent etre rendu ce vdd à 13 h 
+
+		sem 6 on auras une présentation à faire pour présenter le QCM , implémentation , les choix fait etc ... ce sera fait avant le rendu du code 
+		il serai donc bien que le code sois terminé d'ici la 
+		on peut utiliser powerpoint ou autre , tant que on sait projeter
+		donc le projet doit etre rendu le 25 oktobre 
+
+		planning ) 
+			répondre à : qui fait quoi , quand , essayer de etre clair dans la répartition des taches , on peut mettre plusieurs personnes 
+			sur les meme taches 
+			pour quand mettre une échelle de temps , meme si elle n'est pas respecté 
+
+		cahier des charges )
+			explication du problème et sous problèmes avec le staches associé , 
+			voir ça comme un contract avec un employeur, sur le projet qu'est ce qui doit etre fait 
+
+			si il y à marqué qu'on ferai tel choses est ce que elle est bien présent dans le porjet 
+
+			donc c'est un accord sur ce qui doit etre fait , la personne s'attend à avoir ça à la fin 
+
+			un chahier des charges contient 6 sections , 
+				1 : contexte , pour quoi on le fait à quoi ça sert etc .. (intro)
+				2 : fonctions, à quoi sert il qu'est ce que il doit faire 
+				3 : performances, notre projet doit tourner à tel vitesse, énergie etc ... 
+				5 : contraintes, quel sont les restrictions appliqué au projet 
+				6 : livrables, ce que on doit rendre, et quand on doit le rendre 

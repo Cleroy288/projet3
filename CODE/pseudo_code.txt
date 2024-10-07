@@ -1,0 +1,118 @@
+
+
+/************ pseudo code ************\
+
+
+# fonction pour afficher la notation en fonction du système de notation choisi
+# liste = liste de vrai faux du joueur
+# number = numéro de notation choisi 1 facile, 2 moyen, 3 difficile
+def notation(liste, number) {
+	# fonction qui prend la liste de bonne réponse et mauvaise réponse du joueur
+
+    # if number = 1 -->>> cotation facile 
+    # etc
+	
+}
+
+# fonction qui prend la liste des réponses du joueur VRAI faux, renvoi un bool VRAI ou faux
+# si faux == user ne veut pas avoir les réponses à ces mauvaise question 
+# si vrai le user veut avoir le réponses à ces mauvaise qestions 
+def function4(liste_vrai_faux) {
+
+    #Demande la cotation qu'il parmis les 3 modes de cotation avec input (1,2,3) et expliquez les cotations aussi
+
+
+    #fcotation sympa1: si la personne a bon +1, mauvais 0.
+    #cotation méchante2:si on a bon +1, sinon -1.
+    #cotation flouTordu3:adapter le poids des mauvaises réponses, pour une réponses au hasard ne donne au final aucun point, vérifier la liste des réponse avec PRNG
+    
+
+	# apelle à la fonction notation(liste_vrai_faux, choix_de_notation) --> on imprime son résultats en fonction de la notation demandé 
+
+    #Demander si il veut sa correction
+    #reprendre la liste rep, comparer et donner l'explication pour les false rep
+	
+}
+
+# fonction pour comparer les réponses du user avec les bonne reponses et donner les résultats
+def function3( liste_de_rep_joueur, liste_de_question_rep ) {
+	#prend en entrée 2 liste la liste des réponses du joueur ainsi que la liste contenant toute les questions et réponses 
+
+	# question par question , compare la liste des réponses du joueur avec la liste des vrai réponses 
+    # si réponse n joueur = réponse n list -->> réponse True
+    # si réponse n joueur != réponse n list -->> réponse False
+
+	# crée une liste qui contient n éléments en fonction du nombre de questions 
+	# --> pour chaque bonne réponse du joueur dans la lsite elle emt VRAI à l'index de la question 
+	# --> si le joueur a faux elle marque "FAUX" à l'index de la question 
+
+	# elle renvoi la liste qu'elle a crée 
+	# return liste avce VRAI et FAUX
+}
+
+
+
+
+# fonction qui print les règles du jeux 
+def printExeplication() {
+	# fonction qui imprime les règles du QCM, commeen
+}
+
+# fonction qui prend en entrée une liste de question, enne vas imprimer chaque question et récupérer chaque réponse 
+# elle stock toute les réponses du joueur, elle renvoi une liste avec toute les réponses du joueur par odre
+def funct1(liste) {
+
+	#imprime 1q à la fois
+
+	print Q1
+    print A1
+    -> print A1n
+    demander la réponse
+    comparer la réponse si V ou F
+
+	# renvoi la liste des réponses du joueur 
+}
+
+# fonction qui met les questions dans un ordre aléatoire 
+def fonction_melange(liste_de_question) {
+	# prend la liste de base 
+
+	# renvoi une liste mélangé 
+}
+
+# fonction main principale , prend en entrée le fichier QCM et renvoi les question dans une liste 
+def main()  {
+	# charles #########################
+	(1)
+	# prenne un fichier en entrée 
+	# apelle la fonction qui traite les question (qcm)
+
+	(1.5)
+	# on prend un prng , on génère une liste de N nombres (en fonction du nombre de questions)
+	# cette liste servira de référence pour mettre les questions dans cet ordre 
+	#####################################
+
+	# grégoire ##########################
+	(2)
+	# elle renvoi la liste à la fonction 1 
+	# liste réponse du joueur = résultats de la fonction 1 
+    # afficher les questions et récupérer les réponses
+	##################
+	
+	# Yohan & jerem #####################
+	(3)
+	# apelle à la fonction 3 qui prend les réponses du joueur et les quetsion , et renvoi la liste de VRAI FAUX
+	# renvoi cette liste à la fonction4 , renvoi un bool , vrai ou faux 
+	# fonction 4 : demander à l'user quelle mode de cotation il veut 
+    # et afficher ses points en fonction du mode de cotation
+	#######################################
+
+	# jerem ##############################
+    (4)
+    # appel à la fonction de correction si l'user veut sa correction, sinon sauter et passer direct fin du programme
+	# si la fonction renvoi vrai alors on affiche la correction, si faux on ne affiche rien 
+    # fin du programme (petit message de fin)
+    #######################################
+
+}   
+

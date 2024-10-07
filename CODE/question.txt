@@ -1,0 +1,60 @@
+Q|Combien d’ailes à un papillon ? 
+A|2|V
+A|4|X
+A|6|X
+A|8|X
+ 
+Q|Qui a peint “la nuit étoilée” ? 
+A|Paul Gauguin|X
+A|Claude Monet|X
+A|Georges Seurat|X
+A|Vincent Van Gogh|V
+ 
+Q|Combien y a-t-il d’états aux Etats-Unis ? 
+A|52|X
+A|54|X
+A|50|V
+A|48|X
+A|42|X
+
+Q|Combien y a-t-il d’os dans la corp humain ? 
+A|206|V
+A|216|X
+A|196|X
+ 
+Q|Quand est ce que l’homme a maitrisé le feu ? 
+
+
+
+ 
+Q|A quel pays appartient la capitale de ...... 
+
+
+
+ 
+Q|Quel est la devise de la Belgique ?
+
+
+
+ 
+Q|Quels sont le(s) aliment(s) faisant partie du régime alimentaire des 
+ Ornithorynques ? 
+
+
+
+ 
+Q|Quels sont les solutions de l’équation suivante ? 
+
+
+
+ 
+Q|Quel est l’orthographe correcte du mot chef d’état aux pluriels ? 
+
+
+
+ 
+Q|Quelle valeur se rapproche le plus de la valeur de pi ?
+ 
+ 
+ 
+ 
