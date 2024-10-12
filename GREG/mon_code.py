@@ -17,7 +17,7 @@ for q in range(len(questions_melange)):
         if reponse.isdigit() and reponse <= str(r) and reponse > str(0):                         #Demande sa réponse
             break
         else:
-            print("Votre format de réponse est incorrect. Veuillez répondre à la question avec un chiffre correspondant à la réponse.")
+            print("Votre format de réponse est incorrect. Veuillez répondre à la question avec un chiffre correspondant à la réponse que vous souhaitez transmettre.")
 
     
 
