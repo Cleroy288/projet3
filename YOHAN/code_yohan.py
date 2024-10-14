@@ -1,4 +1,4 @@
-import random
+import 
 
-def functionYohan:
+def function3(:
     print("Mon taff")
