@@ -1,5 +1,6 @@
-import random
+import 
 
+def function3(:
 def functionYohan:
 	#prend en entrée 2 liste la liste des réponses du joueur ainsi que la liste contenant toute les questions et réponses 
 
