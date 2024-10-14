@@ -72,20 +72,9 @@ A|Des feuilles|X|Les ornithorynques mangent généralement des petits crustacés
 
 
  
-Q|Quels sont les solutions de l’équation suivante: 7x - 4 = 3
-A|7|X| 7x - 4 = 3
-      (=)7x = 7 (nous envoyons le(-4) de l'autre coté donc 4+3=7
-      (=)x = 1 (nous envoyons le 7 de l'autre coté comme c'est un fois cela devient un divisé et 7/7 =1)
-A|X|X|7x - 4 = 3
-      (=)7x = 7 (nous envoyons le(-4) de l'autre coté donc 4+3=7
-      (=)x = 1 (nous envoyons le 7 de l'autre coté comme c'est un fois cela devient un divisé et 7/7 =1)
+Q|Quels sont les solutions de l’équation suivante: 7x - 4 = 3 ?
+A|x=1|V
+A|x=0|X|<=> 7x = 3 + 4 <=> 7x = 7 <=> x = 1
+A|x=-1|X|<=> 7x = 3 + 4 <=> 7x = 7 <=> x = 1
 
-A|7X|X|7x - 4 = 3
-      (=)7x = 7 (nous envoyons le(-4) de l'autre coté donc 4+3=7
-      (=)x = 1 (nous envoyons le 7 de l'autre coté comme c'est un fois cela devient un divisé et 7/7 =1)
-A|1|V|
-A|1X|X|7x - 4 = 3
-      (=)7x = 7 (nous envoyons le(-4) de l'autre coté donc 4+3=7
-      (=)x = 1 (nous envoyons le 7 de l'autre coté comme c'est un fois cela devient un divisé et 7/7 =1) 
- 
  
