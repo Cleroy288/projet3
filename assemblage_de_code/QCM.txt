@@ -1,16 +1,91 @@
-Q|Quelle est la couleur du cheval blanc de Napoléon ?
-A|Brun|V
-A|Bleu|X
-A|Violet|X
+Q|Combien d’ailes à un papillon ? 
+A|2|V
+A|4|X|Un papillon n'a que 2 ailes.
+A|6|X|Un papillon n'a que 2 ailes.
+A|8|X|Un papillon n'a que 2 ailes.
+ 
+Q|Qui a peint “la nuit étoilée” ? 
+A|Paul Gauguin|X|Le célèbre artiste qui a peint "La nuit étoilée" est Vincent Van Gogh.
+A|Claude Monet|X|Le célèbre artiste qui a peint "La nuit étoilée" est Vincent Van Gogh.
+A|Georges Seurat|X|Le célèbre artiste qui a peint "La nuit étoilée" est Vincent Van Gogh.
+A|Vincent Van Gogh|V
+ 
+Q|Combien y a-t-il d’états aux Etats-Unis ? 
+A|52|X|Il n'y a pas 52 états aux Etats-Unis, mais 50.
+A|54|X|Il n'y a pas 54 états aux Etats-Unis, mais 50.
+A|50|V
+A|48|X|Il n'y a pas 48 états aux Etats-Unis, mais 50.
+A|42|X|Il n'y a pas 42 états aux Etats-Unis, mais 50.
 
-Q|Combien de jours dans un mois ?
-A|28|V
-A|29|V
-A|30|V
-A|31|V
-A|25|X
+Q|À quel pays appartient la capitale de Tokyo ?
+A|Japon|V|
+A|Chine|X|Tokyo est la capitale du Japon, pas de la Chine.
+A|Corée du Sud|X|Séoul est la capitale de la Corée du Sud, pas Tokyo.
+A|Taïwan|X|Taïpei est la capitale de Taïwan, mais Tokyo appartient au Japon.
 
-Q|Quel est l'équivalent américain de l'ESA (European Space Agency) ?
-A|NASA|V
-A|NSA|X|La NSA est la National Security Agency
-A|FBI|X
+Q|Combien y a-t-il d’os dans la corp humain ? 
+A|206|V
+A|216|X|C'était une question assez ardue c'est vrai. Il y a 206 os dans le corp humain, pas 216.
+A|196|X|C'était une question assez ardue c'est vrai. Il y a 206 os dans le corp humain, pas 196.
+ 
+Q|Quand est-ce que l’homme a maîtrisé le feu ?
+A|Environ 400 000 ans avant notre ère|V|
+A|Il y a environ 10 000 ans|X|Le feu était déjà maitrisé avant, 400 000 ans avant notre ère.
+A|Il y a 1 million d’années|X|L'utilisation du feu remonte a 1,5M d'année, mais la capacité à le maitriser remonte à 400 000 ans avant notre ère.
+
+Q|Quel est l’orthographe correcte du mot "chef d’État" au pluriel ?
+A|Chefs d’État|V|
+A|Chefs d’États|X|Le mot "État" reste invariable au pluriel, donc on ne met pas de "s" à "État".
+A|Chefs d’États|X|Cette orthographe est incorrecte car "État" ne prend pas de "s" au pluriel. Seul "chefs" prend un "s".
+A|Chefs-d’État|X|Le trait d’union n’est pas utilisé ici.
+
+Q|Quelle valeur se rapproche le plus de la valeur de pi ?
+A|3,14|V|
+A|3,15|F|3,15 est trop élevé. La valeur de pi est approximativement 3,1416.
+A|3,1416|V|C'est une aproximation plus précise de pi, mais la valeur usuelle est 3.14
+A|3,2|F|3,2 est beaucoup trop élevé par rapport à la valeur de pi.
+ 
+Q|Quel pays à gagné la coupe du monde de football en 2018 ?
+A|France|V|
+A|Belgique|X|Malgré notre détermination, nous n'avons pas encore gagné de coupe du monde.. C'était la France.
+A|Italie|Ce n'était pas l'Italie, mais la France.
+A|Croatie|X|C'était les finalistes qui ont perdu contre la France,
+
+Q|Quel jour de l'année 1492 Christophe Colomb a-t-il découvert l'Amérique ?
+A|Le 11 novembre|X|C'est la date de l'Armistice.
+A|Le 12 octobre|V|
+A|Le 26 juin|X|Ce n'est pas cette date là.
+
+Q|Quel est la devise de la Belgique ?
+A|"Liberté, Égalité, Fraternité"|X|La devise de la Belgique est:"L'union fait la force".
+A|"L'union fait la force"|V|
+A|"Dieu et mon droit"|X|La devise de la Belgique est:"L'union fait la force".
+
+ 
+Q|Quels sont le(s) aliment(s) faisant partie du régime alimentaire des 
+ Ornithorynques ? 
+A|Des fruits|X|Les ornithorynques mangent généralement des petits crustacés comme les crevettes d'eau douce et également des vers tels que les vers de terre qui vivent dans les sédiments des rivières et ruisseaux.
+A|Des insectes|X|Les ornithorynques mangent généralement des petits crustacés comme les crevettes d'eau douce et également des vers tels que les vers de terre qui vivent dans les sédiments des rivières et ruisseaux.
+A|Des petits crustacés|V|
+A|Des vers|V|
+A|Des feuilles|X|Les ornithorynques mangent généralement des petits crustacés comme les crevettes d'eau douce et également des vers tels que les vers de terre qui vivent dans les sédiments des rivières et ruisseaux.
+
+
+ 
+Q|Quels sont les solutions de l’équation suivante: 7x - 4 = 3
+A|7|X| 7x - 4 = 3
+      (=)7x = 7 (nous envoyons le(-4) de l'autre coté donc 4+3=7
+      (=)x = 1 (nous envoyons le 7 de l'autre coté comme c'est un fois cela devient un divisé et 7/7 =1)
+A|X|X|7x - 4 = 3
+      (=)7x = 7 (nous envoyons le(-4) de l'autre coté donc 4+3=7
+      (=)x = 1 (nous envoyons le 7 de l'autre coté comme c'est un fois cela devient un divisé et 7/7 =1)
+
+A|7X|X|7x - 4 = 3
+      (=)7x = 7 (nous envoyons le(-4) de l'autre coté donc 4+3=7
+      (=)x = 1 (nous envoyons le 7 de l'autre coté comme c'est un fois cela devient un divisé et 7/7 =1)
+A|1|V|
+A|1X|X|7x - 4 = 3
+      (=)7x = 7 (nous envoyons le(-4) de l'autre coté donc 4+3=7
+      (=)x = 1 (nous envoyons le 7 de l'autre coté comme c'est un fois cela devient un divisé et 7/7 =1) 
+ 
+ 
