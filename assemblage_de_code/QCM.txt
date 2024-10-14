@@ -4,11 +4,12 @@ A|Bleu|X
 A|Violet|X
 
 Q|Combien de jours dans un mois ?
-A|28|V
+A|28|V|Il n'y a pas 28 jours dans un mais 30
 A|29|V
 A|30|V
 A|31|V
 A|25|X
+
 
 Q|Quel est l'équivalent américain de l'ESA (European Space Agency) ?
 A|NASA|V
