@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 
 
+# .py qui transforme le txt qcm, PAS TOUCHE minouche
+
 """
     Exemple d'utilisation de la librairie:
     -------------------------------------
