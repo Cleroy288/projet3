@@ -41,14 +41,14 @@ A|Chefs-d’État|X|Le trait d’union n’est pas utilisé ici.
 
 Q|Quelle valeur se rapproche le plus de la valeur de pi ?
 A|3,14|V|
-A|3,15|F|3,15 est trop élevé. La valeur de pi est approximativement 3,1416.
+A|3,15|X|3,15 est trop élevé. La valeur de pi est approximativement 3,1416.
 A|3,1416|V|C'est une aproximation plus précise de pi, mais la valeur usuelle est 3.14
-A|3,2|F|3,2 est beaucoup trop élevé par rapport à la valeur de pi.
+A|3,2|X|3,2 est beaucoup trop élevé par rapport à la valeur de pi.
  
 Q|Quel pays à gagné la coupe du monde de football en 2018 ?
 A|France|V|
 A|Belgique|X|Malgré notre détermination, nous n'avons pas encore gagné de coupe du monde.. C'était la France.
-A|Italie|Ce n'était pas l'Italie, mais la France.
+A|Italie|X|Ce n'était pas l'Italie, mais la France.
 A|Croatie|X|C'était les finalistes qui ont perdu contre la France,
 
 Q|Quel jour de l'année 1492 Christophe Colomb a-t-il découvert l'Amérique ?
