@@ -1,5 +1,5 @@
 
-questions_melange =  #-> LISTE PRNG QUESTION CHARLES 
+questions_melange =  #-> LISTE PRNG QUESTION CHARLES
 
 print("Le questionnaire est une liste de questions.")
 
