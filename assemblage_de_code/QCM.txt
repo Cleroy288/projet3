@@ -62,14 +62,12 @@ A|"L'union fait la force"|V|
 A|"Dieu et mon droit"|X|La devise de la Belgique est:"L'union fait la force".
 
  
-Q|Quels sont le(s) aliment(s) faisant partie du régime alimentaire des 
- Ornithorynques ? 
+Q|Quels sont le(s) aliment(s) faisant partie du régime alimentaire des Ornithorynques ? 
 A|Des fruits|X|Les ornithorynques mangent généralement des petits crustacés comme les crevettes d'eau douce et également des vers tels que les vers de terre qui vivent dans les sédiments des rivières et ruisseaux.
 A|Des insectes|X|Les ornithorynques mangent généralement des petits crustacés comme les crevettes d'eau douce et également des vers tels que les vers de terre qui vivent dans les sédiments des rivières et ruisseaux.
 A|Des petits crustacés|V|
 A|Des vers|V|
 A|Des feuilles|X|Les ornithorynques mangent généralement des petits crustacés comme les crevettes d'eau douce et également des vers tels que les vers de terre qui vivent dans les sédiments des rivières et ruisseaux.
-
 
  
 Q|Quels sont les solutions de l’équation suivante: 7x - 4 = 3 ?
