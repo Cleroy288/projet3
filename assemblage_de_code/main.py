@@ -101,7 +101,19 @@ def correctionOfUserReponses(listQuestions, listPlayerAnswers):
 		print(f"Votre note est de {points} sur {len(listQuestions)}")
 	elif correction_method == 2:
 		print("Vous avez choisis la méthode de correction numéro 2")
-		print(f"Vous avez {points - 2} sur {len(listQuestions)}")
+		points = 0
+		for i in listPlayerAnswers:
+				#print(f"i == {i}")
+				#print(f"i[0] == {i[0]}")
+				if i[0] == 1: # à chaque bonne réponse
+					points += 1 # on ajoute un point
+				else:
+					points -= 1 # on enlève un point
+
+		if points < 0:
+			points = 0
+
+		print(f"Vous avez {points} sur {len(listQuestions)}")
 	elif correction_method == 3:
 		print("Vous avez choisis 3")
 		print("Vous avez choisis la méthode de correction numéro 0")
@@ -134,6 +146,7 @@ def showQCMExplainations(newQuestions, listRepPlayer):
 		for i in range(len(newQuestions)): # in passer à travers chaque question 
 			if listRepPlayer[i][0] == 0:  # si la réponse est fausse
 				print(f"\nQuestion {i + 1} : {newQuestions[i][0]}")  # print la question
+				#####print(f"Vous avez répondu : {newQuestions[i][1][listRepPlayer[i][1]]}")	# print la réponse qu'on a donné ? j'arrive pas à aller correctement dans la liste
 
 				# init les variables pour stocker les bonne réponse et les explications
 				correctAnswer = None  
@@ -147,7 +160,7 @@ def showQCMExplainations(newQuestions, listRepPlayer):
 						break  # on sort de la boucle
 
 				# print la bonne réponse et son explication si disponible
-				print(f"Bonne réponse: {correctAnswer}")
+				print(f"La bonne réponse était : {correctAnswer}")
 				if explaination:
 					print(f"Explications : {explaination}")
 				else:
