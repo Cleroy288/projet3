@@ -30,8 +30,6 @@ def getListAndShuffle(filename):
 	
 	lst = getListSizeAndMakeNewSizeList(lst) # on prend la bonne taille de liste
 
-	
-
 	return lst # on renvoi la liste
 		
 # fonction de greg 
@@ -39,7 +37,9 @@ def printQuestionsAndGetAnswers(questions_melange):
 	
 	print("\n------------ Nous allons passer à la partie QCM -------------\n")
 
-	liste_reponse_player = []
+	liste_reponse_player = []# liste dans la quel on vas stocker 1 ou 0 en fonction de si la réponse du user est juste ou non
+	#liste_index_rep_player = []# liste dans la quel on vas stocker les index de réponses du joueur
+
 	for q in range(len(questions_melange)):
 		# print la question
 		print(f"\tQuestion {q+1}: \"{questions_melange[q][0]}\"")
@@ -65,16 +65,15 @@ def printQuestionsAndGetAnswers(questions_melange):
 
 		# déterminer l'indexe de la réponse sélectionné
 		indexRep = reponse - 1
-		#print(f"Index de la réponse choisie == {indexRep}")
-		
+		#liste_index_rep_player.append(indexRep)
+
 		# vérifier si la réponse est juste ou pas , si juste on ajoute un 1 si il à faux on ajoute 0
 		if questions_melange[q][1][indexRep][1]:  # réponse correcte
-			liste_reponse_player.append([1]) 
+			liste_reponse_player.append([1, indexRep])
 		else:  # réponse fausse
-			liste_reponse_player.append([0, reponse])
+			liste_reponse_player.append([0, indexRep])
 
-	#print(f"liste des réponses du joueur : {liste_reponse_player}")
-	return liste_reponse_player
+	return liste_reponse_player#, liste_index_rep_player
 
 def correctionOfUserReponses(listQuestions, listPlayerAnswers):
 	print("\n--------- Nous allons passer à la partie correction --------\n")
@@ -116,9 +115,10 @@ def correctionOfUserReponses(listQuestions, listPlayerAnswers):
 		print(f"Vous avez {points} sur {len(listQuestions)}")
 	elif correction_method == 3:
 		print("Vous avez choisis 3")
-		print("Vous avez choisis la méthode de correction numéro 0")
+		#print("Vous avez choisis la méthode de correction numéro 0")
 
 def showQCMExplainations(newQuestions, listRepPlayer):
+
 	# on passe à travers chaque réponse 
 	if all(rep[0] == 1 for rep in listRepPlayer):  # si toute les rep sont juste
 		print("WAOW vous n'avez pas fait d'erreurs, vous êtes trop fort !")
@@ -141,12 +141,13 @@ def showQCMExplainations(newQuestions, listRepPlayer):
 	# si le user veut des explications
 	if rep == "oui":
 		print("\n------------Vous avez choisi oui, nous allons donc procéder à la correction.------------")
-				
 
 		for i in range(len(newQuestions)): # in passer à travers chaque question 
 			if listRepPlayer[i][0] == 0:  # si la réponse est fausse
 				print(f"\nQuestion {i + 1} : {newQuestions[i][0]}")  # print la question
-				#####print(f"Vous avez répondu : {newQuestions[i][1][listRepPlayer[i][1]]}")	# print la réponse qu'on a donné ? j'arrive pas à aller correctement dans la liste
+				indexRepPlayer = listRepPlayer[i][1]  # index de la rep du user
+				playerRep = newQuestions[i][1][indexRepPlayer][0]  # test de la réponse du user
+				print(f"Vous avez répondu : {playerRep}")	# print la réponse qu'on a donné du joueur
 
 				# init les variables pour stocker les bonne réponse et les explications
 				correctAnswer = None  
@@ -156,23 +157,35 @@ def showQCMExplainations(newQuestions, listRepPlayer):
 				for answer in newQuestions[i][1]:
 					if answer[1]:  # bonne réponse
 						correctAnswer = answer[0]  # stocker la bonne réponse
-						explaination = answer[2]  # stocker l'explication
 						break  # on sort de la boucle
 
 				# print la bonne réponse et son explication si disponible
 				print(f"La bonne réponse était : {correctAnswer}")
-				if explaination:
-					print(f"Explications : {explaination}")
+
+				explaination = newQuestions[i][1][indexRepPlayer][2]  # Explication associée à la réponse du joueur
+
+				if explaination:  # si on à trouvé une explication pour la réponse du user on l'affiche
+					print(f"Explications pour votre réponse : {explaination}")
 				else:
-					print("Il n'y a pas d'explication à cette réponse.")
+					# si on n'a pas trouvé d'explications, on passe à travers l'élément de la liste pour voir si il n'y en à pas un autre , ceci est une sécurité
+					explanation_found = False  # flag pour savoir si une explication a été trouvée
+					for answer in newQuestions[i][1]:
+						if answer[2]:  # si on trouve une réponse
+							print(f"Explication pour la réponse {answer[0]} : {answer[2]}") # on la print
+							explanation_found = True # on met le flag à true
+							break  # on break / sort de la boucle
+
+					# si il n'y à pas de bonne rep trouvé
+					if not explanation_found:
+						print("Il n'y a pas d'explication disponible pour cette question.") # on print un message
 
 			else:
 				# si la rép était correcte on le précise simplement
 				print(f"\nVous aviez juste à la question {i + 1}.\n")
+			print("\n")
 	else:
 		# si le USER choisit de ne pas voir les explications on quitte la fonction
 		return True
-	print("\n")	
 	return True
 
 def endMessage():
