@@ -4,16 +4,16 @@ import random # pour le prng
 
 # ici on vas demandr au user combien de questions il veut , sur base de cela on vas tronquer la liste de questions pour en avoir une nouvelle contennat le nombre de questions que le user veut
 def getListSizeAndMakeNewSizeList(lst):
-	print(f"Bonjour , combien de questions voulez vous avoir ? réponse entre 1 et {len(lst)}")# print un message explicatif
+	print(f"Bonjour , combien de questions voulez-vous avoir ? Réponse entre 1 et {len(lst)}")# print un message explicatif
 
 	while (True):# boucle while infni
 		rep = input("Entrez une réponse en chiffre : ")# on demande au user comb de questions il veut
 		if not rep.isdigit():
-			print("Veillez ne rentrer que des chiffres")# pas que des chiffres == erreur
+			print("Veuillez ne rentrer que des chiffres.")# pas que des chiffres == erreur
 		else:
 			rep = int(rep)
 			if rep <= 0 or rep > len(lst):# un chiffre en dessous de zéro ou plus que de questions disponible == erreur
-				print("Veuillez rentrer une valeur valide")
+				print("Veuillez rentrer une valeur valide.")
 			else:
 				lst = lst[0:rep]
 				return lst# après avoir géré les cas d'erreur on renvoi la liste
@@ -23,19 +23,21 @@ def getListAndShuffle(filename):
 	lst = build_questionnaire(filename)
 
 	if not lst:
-		print("Le fichier fourni ne nous as renvoyé aucune questions")
+		print("Erreur, le fichier fourni n'est pas valide ou ne nous a renvoyé aucune questions.")
 		exit(0)# il y as eu une erreur on quitte le programme 
+
+	random.shuffle(lst) # on mélange la liste pour donner une liste aléatoire 
 	
 	lst = getListSizeAndMakeNewSizeList(lst) # on prend la bonne taille de liste
 
-	random.shuffle(lst) # on mélange la liste pour donner une liste aléatoire 
+	
 
-	return lst # on renvoi la liste 
+	return lst # on renvoi la liste
 		
 # fonction de greg 
 def printQuestionsAndGetAnswers(questions_melange):
 	
-	print("\n------------ Nous allons passer à la aprtie QCM -------------\n")
+	print("\n------------ Nous allons passer à la partie QCM -------------\n")
 
 	liste_reponse_player = []
 	for q in range(len(questions_melange)):
@@ -94,19 +96,26 @@ def correctionOfUserReponses(listQuestions, listPlayerAnswers):
 	# ici on gère les différent type de correction
 	# il faut implémenter la logique pour ça 
 	if correction_method == 1:
-		print("Vous avez choisis 1")
+		print("Vous avez choisis la méthode de correction numéro 1")
+		print("Ce mode de correction est assez facile et le plus utilisé, il met juste votre nombre de réponse juste sur le nombre de questions totales.")
 		print(f"Votre note est de {points} sur {len(listQuestions)}")
 	elif correction_method == 2:
-		print("Vous avez hoisis 2")
+		print("Vous avez choisis la méthode de correction numéro 2")
 		print(f"Vous avez {points - 2} sur {len(listQuestions)}")
 	elif correction_method == 3:
 		print("Vous avez choisis 3")
-		print("Votre note est de 0")
+		print("Vous avez choisis la méthode de correction numéro 0")
 
 def showQCMExplainations(newQuestions, listRepPlayer):
+	# on passe à travers chaque réponse 
+	if all(rep[0] == 1 for rep in listRepPlayer):  # si toute les rep sont juste
+		print("WAOW vous n'avez pas fait d'erreurs, vous êtes trop fort !")
+		print("Il n'y a donc pas de correction pour vous !\n")
+		return True  # rien à corriger
+
 	# print de rappel et instructions
 	print("\n--------- Nous allons passer à la partie explications ----------\n")
-	print("Souhaitez-vous avoir les explications à vos erreurs ?")
+	print("Souhaitez-vous avoir une correction de vos erreurs ?")
 	rep = input("Répondez : oui ou non : ")
 	
 	# on récupère l'input du user, oui ou non
@@ -119,13 +128,8 @@ def showQCMExplainations(newQuestions, listRepPlayer):
 
 	# si le user veut des explications
 	if rep == "oui":
-		print("\nVous avez choisi oui, nous allons donc procéder")
-		
-		# on passe à travers chaque réponse 
-		if all(rep[0] == 1 for rep in listRepPlayer):  # si toute les rep sont juste
-			print("WAOW vous n'avez pas fait d'erreurs, vous êtes trop fort !")
-			print("Il n'y a donc pas de correction pour vous !\n")
-			return True  # rien à corriger
+		print("\n------------Vous avez choisi oui, nous allons donc procéder à la correction.------------")
+				
 
 		for i in range(len(newQuestions)): # in passer à travers chaque question 
 			if listRepPlayer[i][0] == 0:  # si la réponse est fausse
@@ -146,10 +150,12 @@ def showQCMExplainations(newQuestions, listRepPlayer):
 				print(f"Bonne réponse: {correctAnswer}")
 				if explaination:
 					print(f"Explications : {explaination}")
+				else:
+					print("Il n'y a pas d'explication à cette réponse.")
 
 			else:
 				# si la rép était correcte on le précise simplement
-				print(f"Vous aviez juste à la question {i + 1}.\n")
+				print(f"\nVous aviez juste à la question {i + 1}.\n")
 	else:
 		# si le USER choisit de ne pas voir les explications on quitte la fonction
 		return True
@@ -157,8 +163,8 @@ def showQCMExplainations(newQuestions, listRepPlayer):
 	return True
 
 def endMessage():
-	print("Merci à vous d'avoir particpé à notre QCM")
-	print("Se QCM vous à été proposé par Charles, Jeremy, Gregoire, Yohan")
+	print("Merci à vous d'avoir particpé à notre QCM, nous espérons que vous vous êtes follement amusés :J")
+	print("Ce QCM vous à été proposé par Charles, Jeremy, Gregoire, Yohan")
 	
 
 if __name__ == '__main__':
