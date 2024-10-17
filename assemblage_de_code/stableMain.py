@@ -4,7 +4,8 @@ import random # pour le prng
 
 # ici on vas demandr au user combien de questions il veut , sur base de cela on vas tronquer la liste de questions pour en avoir une nouvelle contennat le nombre de questions que le user veut
 def getListSizeAndMakeNewSizeList(lst):
-	print(f"Bonjour , combien de questions voulez-vous avoir ? Réponse entre 1 et {len(lst)}")# print un message explicatif
+	print("\n--------------Bonjour, bienvenue dans le qcm du groupe B07--------------\n")
+	print(f"Combien de questions voulez-vous avoir ? Réponse entre 1 et {len(lst)}")# print un message explicatif
 
 	while (True):# boucle while infni
 		rep = input("Entrez une réponse en chiffre : ")# on demande au user comb de questions il veut
@@ -87,7 +88,7 @@ def correctionOfUserReponses(listQuestions, listPlayerAnswers):
 
 	print("Quel type niveau de difficulté voulez vous pour votre correction? ")# on demande le type de correction 
 	while True: # on crée une boucle infi pour demander l'input du user
-		correction_method = int(input("1 facile, 2 moyen, 3 difficle : ")) # on prend l'inupt qu'on change en int
+		correction_method = int(input("1 - Sympa, 2 - Méchante, 3 - Floue et tordue : ")) # on prend l'inupt qu'on change en int
 		if correction_method != 1 and correction_method != 2 and correction_method != 3:# petite vérif de la validité de l'input
 			print("Veuillez rentrer une valeur entre 1 et 3")
 		else:
@@ -96,10 +97,12 @@ def correctionOfUserReponses(listQuestions, listPlayerAnswers):
 	# il faut implémenter la logique pour ça 
 	if correction_method == 1:
 		print("Vous avez choisis la méthode de correction numéro 1")
-		print("Ce mode de correction est assez facile et le plus utilisé, il met juste votre nombre de réponse juste sur le nombre de questions totales.")
-		print(f"Votre note est de {points} sur {len(listQuestions)}")
+		print("Ce mode de correction est assez facile et le plus utilisé, il met juste votre nombre de réponse juste sur le nombre de questions totales et ensuite remis sur 20.\n")
+		print(f"Vous avez répondu à {points} bonne question sur {len(listQuestions)}")
+		print(f"Votre note est de {(points/len(listQuestions))*20} sur 20")
 	elif correction_method == 2:
 		print("Vous avez choisis la méthode de correction numéro 2")
+		print("Ce mode de correction est difficle, si vous avez juste, vous gagnez un point, mais si vous répondez faux, vous en perdez un. Tout ça sur le nombre de question totale, et ensuite remis sur 20.\n")
 		points = 0
 		for i in listPlayerAnswers:
 				#print(f"i == {i}")
@@ -112,16 +115,19 @@ def correctionOfUserReponses(listQuestions, listPlayerAnswers):
 		if points < 0:
 			points = 0
 
-		print(f"Vous avez {points} sur {len(listQuestions)}")
+		print(f"Vous avez répondu à {points} bonne question sur {len(listQuestions)}")
+		print(f"Votre note est de {(points/len(listQuestions))*20} sur 20")
 	elif correction_method == 3:
-		print("Vous avez choisis 3")
-		#print("Vous avez choisis la méthode de correction numéro 0")
+		print("Vous avez choisis la méthode de correction numéro 3")
+		print("Ce mode de correction est très ardu")
+		print("On vérifie si les réponses données ne sont pas des réponses mises au hasard")
+		#PAS FAIT
 
 def showQCMExplainations(newQuestions, listRepPlayer):
 
 	# on passe à travers chaque réponse 
 	if all(rep[0] == 1 for rep in listRepPlayer):  # si toute les rep sont juste
-		print("WAOW vous n'avez pas fait d'erreurs, vous êtes trop fort !")
+		print("\nWAOW vous n'avez pas fait d'erreurs, vous êtes trop fort !")
 		print("Il n'y a donc pas de correction pour vous !\n")
 		return True  # rien à corriger
 
@@ -190,7 +196,7 @@ def showQCMExplainations(newQuestions, listRepPlayer):
 
 def endMessage():
 	print("Merci à vous d'avoir particpé à notre QCM, nous espérons que vous vous êtes follement amusés :J")
-	print("Ce QCM vous à été proposé par Charles, Jeremy, Gregoire, Yohan")
+	print("\nCe QCM vous à été proposé par Charles, Jeremy, Gregoire, Yohan")
 	
 #def mandatory():
 #	print("BONOUR pour pouvoir utiliser notre programme il y à 2 lib prérecquise")
