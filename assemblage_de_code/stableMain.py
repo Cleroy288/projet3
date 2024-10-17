@@ -77,13 +77,8 @@ def printQuestionsAndGetAnswers(questions_melange):
 
 def correctionOfUserReponses(listQuestions, listPlayerAnswers):
 	print("\n--------- Nous allons passer à la partie correction --------\n")
-	#print(listPlayerAnswers)
-	points = 0 # on crée un compteur pour les points du USER
-	for i in listPlayerAnswers:
-		#print(f"i == {i}")
-		#print(f"i[0] == {i[0]}")
-		if i[0] == 1: # à chaque bonne réponse
-			points += 1 # on ajoute un point
+
+	points = len(listQuestions) # on crée un compteur pour les points du USER
 
 	print("Quel type niveau de difficulté voulez vous pour votre correction? ")# on demande le type de correction 
 	while True: # on crée une boucle infi pour demander l'input du user
@@ -93,29 +88,25 @@ def correctionOfUserReponses(listQuestions, listPlayerAnswers):
 		else:
 			break # si on à bien reçu une valeur entre 1 et 3 on sort de la boucle 
 	# ici on gère les différent type de correction
-	# il faut implémenter la logique pour ça 
 	if correction_method == 1:
 		print("Vous avez choisis la méthode de correction numéro 1")
 		print("Ce mode de correction est assez facile et le plus utilisé, il met juste votre nombre de réponse juste sur le nombre de questions totales.")
-		print(f"Votre note est de {points} sur {len(listQuestions)}")
+		for i in listPlayerAnswers:
+			if i[0] == 0: # à chaque bonne réponse
+				points -= 1 # on ajoute un point
+	
 	elif correction_method == 2:
 		print("Vous avez choisis la méthode de correction numéro 2")
-		points = 0
 		for i in listPlayerAnswers:
-				#print(f"i == {i}")
-				#print(f"i[0] == {i[0]}")
-				if i[0] == 1: # à chaque bonne réponse
-					points += 1 # on ajoute un point
-				else:
-					points -= 1 # on enlève un point
+			if i[0] == 0: # à chaque bonne réponse
+				points -= 2 # on ajoute un point
 
-		if points < 0:
-			points = 0
-
-		print(f"Vous avez {points} sur {len(listQuestions)}")
 	elif correction_method == 3:
-		print("Vous avez choisis 3")
-		#print("Vous avez choisis la méthode de correction numéro 0")
+		print("Vous avez choisis la méthode de correction numéro 3")
+
+	if points < 0:
+		points = 0
+	print(f"Vous avez {points} sur {len(listQuestions)}")
 
 def showQCMExplainations(newQuestions, listRepPlayer):
 
