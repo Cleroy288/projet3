@@ -31,6 +31,10 @@ def getListAndShuffle(filename):
 	
 	lst = getListSizeAndMakeNewSizeList(lst) # on prend la bonne taille de liste
 
+	# on mélange les réponses de chaque question
+	for question in lst:
+		random.shuffle(question[1])
+
 	return lst # on renvoi la liste
 		
 # fonction de greg 
@@ -121,7 +125,29 @@ def correctionOfUserReponses(listQuestions, listPlayerAnswers):
 		print("Vous avez choisis la méthode de correction numéro 3")
 		print("Ce mode de correction est très ardu")
 		print("On vérifie si les réponses données ne sont pas des réponses mises au hasard")
-		#PAS FAIT
+
+		#FAIT
+		random_penalties = 0 # valeurde pénalité aléatoire
+
+		# pour chaque question , on génère le nombre de réponses possible - 1 de nombre aléatoires 
+		for q_index, question in enumerate(listQuestions):
+			# on génère des nombres aléatoires 
+			possible_neswers = len(question[1])
+			random_indexes = random.sample(range(possible_neswers), possible_neswers - 1)
+
+			# on vérifie si le user à choix une réponse au hasard sur base de snombre généres 
+			player_answer = listPlayerAnswers[q_index][1]
+
+			if player_answer in random_indexes:
+				random_penalties += 1# si c'est une réponse aléatoire on ajoute une pénalité 
+			
+		final_score = points - random_penalties # on soustrait les pénalités des points
+		if final_score < 0:
+			final_score = 0
+		
+		print(f"Votre score après pénalités aléatoires est de {final_score} sur {len(listQuestions)}")
+
+	
 
 def showQCMExplainations(newQuestions, listRepPlayer):
 
@@ -198,15 +224,7 @@ def endMessage():
 	print("Merci à vous d'avoir particpé à notre QCM, nous espérons que vous vous êtes follement amusés :J")
 	print("\nCe QCM vous à été proposé par Charles, Jeremy, Gregoire, Yohan")
 	
-#def mandatory():
-#	print("BONOUR pour pouvoir utiliser notre programme il y à 2 lib prérecquise")
-#	print("La librairie python [colorama] et [pyfiglet], veuillez les installer avant de continuer")
-#	rep = input("Avez vous installé ses librairies ? (oui / non) : ")
-#	if rep == "oui":
-#		print("Super bonne continuation")
-#	else:
-#		print("Veuillez les installer avant de continuer")
-#		exit()
+
 
 if __name__ == '__main__':
 	filename = "QCM.txt"
