@@ -100,12 +100,12 @@ def correctionOfUserReponses(listQuestions, listPlayerAnswers):
 	# ici on gère les différent type de correction
 	# il faut implémenter la logique pour ça 
 	if correction_method == 1:
-		print("Vous avez choisis la méthode de correction numéro 1")
+		print("\nVous avez choisis la méthode de correction numéro 1")
 		print("Ce mode de correction est assez facile et le plus utilisé, il met juste votre nombre de réponse juste sur le nombre de questions totales et ensuite remis sur 20.\n")
 		print(f"Vous avez répondu à {points} bonne question sur {len(listQuestions)}")
 		print(f"Votre note est de {(points/len(listQuestions))*20} sur 20")
 	elif correction_method == 2:
-		print("Vous avez choisis la méthode de correction numéro 2")
+		print("\nVous avez choisis la méthode de correction numéro 2")
 		print("Ce mode de correction est difficle, si vous avez juste, vous gagnez un point, mais si vous répondez faux, vous en perdez un. Tout ça sur le nombre de question totale, et ensuite remis sur 20.\n")
 		points = 0
 		for i in listPlayerAnswers:
@@ -122,11 +122,12 @@ def correctionOfUserReponses(listQuestions, listPlayerAnswers):
 		print(f"Vous avez répondu à {points} bonne question sur {len(listQuestions)}")
 		print(f"Votre note est de {(points/len(listQuestions))*20} sur 20")
 	elif correction_method == 3:
-		print("Vous avez choisis la méthode de correction numéro 3")
-		print("Ce mode de correction est très ardu")
-		print("On vérifie si les réponses données ne sont pas des réponses mises au hasard")
+		print("\nVous avez choisis la méthode de correction numéro 3")
+		print("Ce mode de correction est très ardu et flou")
+		print("On vérifie si les réponses données ne sont pas des réponses mises au hasard en les comparants à des réponses mises au hasard avec une fonction python")
+		print("Si elles coincident, vous avez un point de pénalité")
+		print("Tout ça sur le nombre de question totale, et ensuite remis sur 20.\n")
 
-		#FAIT
 		random_penalties = 0 # valeurde pénalité aléatoire
 
 		# pour chaque question , on génère le nombre de réponses possible - 1 de nombre aléatoires 
@@ -146,6 +147,7 @@ def correctionOfUserReponses(listQuestions, listPlayerAnswers):
 			final_score = 0
 		
 		print(f"Votre score après pénalités aléatoires est de {final_score} sur {len(listQuestions)}")
+		print(f"Votre note est de {(final_score/len(listQuestions))*20} sur 20")
 
 	
 
